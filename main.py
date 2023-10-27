@@ -6,6 +6,10 @@ exit - выход из программы
 """
 
 tasks = []
+today = []
+tomorrow = []
+other = []
+
 run = True
 while run:
     command = input("Введите комманду: ")
@@ -14,8 +18,16 @@ while run:
     elif command == "show":
         print(tasks)
     elif command == "add":
-        task = input("Введите название задачи")
-        tasks.append(task)
+        timeTask = input("Дата выполенния задачи")
+        if timeTask == "сегодня":
+            task = input("Введите название задачи")
+            today.append(task)
+        elif timeTask == "завтра":
+            task = input("Введите название задачи")
+            tomorrow.append(task)
+        else:
+            task = input("Введите название задачи")
+            other.append(task)
         print("Задача добавлена...")
     elif command == "exit":
         print("Спасибо за использование! До свидания!")
