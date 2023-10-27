@@ -16,17 +16,21 @@ while run:
     if command == "help":
         print(HELP)
     elif command == "show":
-        print(tasks)
+        print("Список задач:")
+        print("Сегодня:")
+        print(today)
+        print("Завтра:")
+        print(tomorrow)
+        print("Без срока:")
+        print(other)
     elif command == "add":
         timeTask = input("Дата выполенния задачи")
+        task = input("Введите название задачи")
         if timeTask == "сегодня":
-            task = input("Введите название задачи")
             today.append(task)
         elif timeTask == "завтра":
-            task = input("Введите название задачи")
             tomorrow.append(task)
         else:
-            task = input("Введите название задачи")
             other.append(task)
         print("Задача добавлена...")
     elif command == "exit":
